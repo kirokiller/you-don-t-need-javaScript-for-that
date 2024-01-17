@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog modals</title>
+  <style>
+    .open-dialog {
+      font-size: 1.6rem;
+      margin: 1rem;
+      padding: 1.3rem 1.7rem 0.9rem;
+      border-radius: 3px;
+      border: 3px solid #d72b2b;
+      background: #000;
+      color: #fff;
+      font-family: inherit;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    #dialog3::backdrop {
+      background: #fff5;
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+
+<body>
+  <dialog id="dialog1">
+    <form method="dialog">
+      <h3>This is a pretty dialog</h3>
+      <button type="submit">Close</button>
+    </form>
+  </dialog>
+  <dialog id="dialog2">
+    <form method="dialog">
+      <p>Tabs or spaces?</p>
+      <button type="submit" value="wrong">Tabs</button>
+      <button type="submit" value="correct">Spaces</button>
+    </form>
+  </dialog>
+  <dialog id="dialog3">
+    <form method="dialog">
+      <h3>This is a dialog with a styled backdrop</h3>
+      <button type="submit">Close</button>
+    </form>
+  </dialog>
+  <button id="open-dialog1" class="open-dialog"> Open dialog1</button>
+  <button id="open-dialog2" class="open-dialog"> Open dialog2</button>
+  <button id="open-dialog3" class="open-dialog"> Open dialog3</button>
+</body>
+<script>
+  document.getElementById('open-dialog1').addEventListener('click', function () {
+    document.getElementById('dialog1').showModal()
+  })
+
+  const dialog2 = document.getElementById('dialog2')
+  document.getElementById('open-dialog2').addEventListener('click', function () {
+    dialog2.showModal()
+  })
+  dialog2.addEventListener('close', function () {
+    console.log(dialog2.returnValue);
+  })
+
+  document.getElementById('open-dialog3').addEventListener('click', function () {
+    document.getElementById('dialog3').showModal()
+  })
+</script>
+
+</html>

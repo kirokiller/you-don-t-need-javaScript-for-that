@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordions</title>
+  <style>
+    summary::marker {
+      font-size: 1.5em;
+      content: "📬";
+    }
+
+    details[open] summary::marker {
+      font-size: 1.5em;
+      content: "📭";
+    }
+
+    summary:hover,
+    summary:focus {
+      cursor: pointer;
+      background: deeppink;
+    }
+  </style>
+</head>
+
+<body>
+  <details>
+    <summary>My accordion</summary>
+    <p>My accordion content</p>
+  </details>
+</body>
+
+</html>
